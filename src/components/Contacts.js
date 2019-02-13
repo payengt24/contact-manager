@@ -12,14 +12,14 @@ class Contacts extends Component {
                 },
                 {
                     id: 2,
-                    name: 'Yeng',
-                    email: 'payeng@gmail.com',
+                    name: 'John',
+                    email: 'john-sm@gmail.com',
                     phone: '555-555-555'
                 },
                 {
                     id: 3,
-                    name: 'Pa',
-                    email: 'pa24@gmail.com',
+                    name: 'Mary',
+                    email: 'mary_smith@gmail.com',
                     phone: '111-111-111'
                 }
             ]

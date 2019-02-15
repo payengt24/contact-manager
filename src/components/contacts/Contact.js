@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //short hand impt
 import PropTypes from 'prop-types'
-import {Consumer} from '../Context'
+import {Consumer} from '../../Context'
 
 
 class Contact extends Component {

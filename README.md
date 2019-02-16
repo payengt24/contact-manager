@@ -1,6 +1,7 @@
 # Contact Manager
 
 Simple App to manage contacts
+deployed to https://payengt24.github.io/contact-manager/
 
 ## Available Scripts
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./components/layout/Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "./Context";

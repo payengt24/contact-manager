@@ -2,29 +2,28 @@ import React, { Component } from 'react'
 //short hand impt
 import PropTypes from 'prop-types'
 import {Consumer} from '../../Context'
+import axios from 'axios'
 
 
 class Contact extends Component {
 
     state= {
-        showContactInfor: true
-    }
-
-    handleShowClick = (event) => {
-        console.log('clicked')
-        this.setState({
-            showContactInfor: !this.state.showContactInfor
-        })
+        showContactInfor: false
     }
 
     deleteContact = (id, dispatch) => {
-      console.log('object');
-      dispatch({type: 'DELETE_CONTACT', payload: id})
+      axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(res => dispatch({type: 'DELETE_CONTACT', payload: id}))
+
+
+
+      
     }
     
   render(props) {
 
     const {id, name, phone, email, key} = this.props.contact
+    const { showContactInfor } = this.state
     
     return (
 
@@ -34,7 +33,9 @@ class Contact extends Component {
            return(
           <div className="card card-body mb-3">
           <h4>{name} 
-          <i onClick={this.handleShowClick} 
+          <i onClick={() => { this.setState({
+          showContactInfor: !this.state.showContactInfor
+        })}}
           className="fas fa-sort-down" 
           style={{cursor: 'pointer'}}>
           </i>
@@ -43,10 +44,11 @@ class Contact extends Component {
           onClick={this.deleteContact.bind(this, id, dispatch)}
           ></i>
           </h4>
-        <ul className="list-group" >
+          {showContactInfor ? (        <ul className="list-group" >
             <li className="list-group-item">{email}</li>
             <li className="list-group-item ">{phone}</li>
-        </ul>
+        </ul>) : null}
+
       </div>
            )
         }}

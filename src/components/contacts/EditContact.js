@@ -74,7 +74,6 @@ class EditContact extends Component {
     })
 
         this.props.history.push('/')
-
     }
 
     
